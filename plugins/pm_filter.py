@@ -606,7 +606,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         cpu_usage = psutil.cpu_percent()
         ram_usage = psutil.virtual_memory().percent
         disk_usage = psutil.disk_usage('/').percent
-        await query.answer(f"🕔 𝖴𝗉𝗍𝗂𝗆𝖾 : {currentTime}\n🛠 𝖢𝖯𝖴 𝖴𝗌𝖺𝗀𝖾: {cpu_usage}\n🗜 𝖱𝖠𝖬 𝖴𝗌𝖺𝗀𝖾: {ram_usage}\n🗂 𝖳𝗈𝗍𝖺𝗅 𝖣𝗂𝗌𝗄 𝖲𝗉𝖺𝖼𝖾: {total}\n🗳 𝖴𝗌𝖾𝖽 𝖲𝗉𝖺𝖼𝖾: {used} ({disk_usage}%)\n📝 𝖥𝗋𝖾𝖾 𝖲𝗉𝖺𝖼𝖾: {free}", show_alert=True)
+        await query.answer(f"⚡️ʟɪᴠᴇ sʏsᴛᴇᴍ sᴛᴀᴛᴜs ⚡️\n\n❂ ᴜᴘᴛɪᴍᴇ : {currentTime}\n✇ ᴄᴘᴜ : {cpu_usage}\n✪ ʀᴀᴍ : {ram_usage}\n✼ ᴛᴏᴛᴀʟ ᴅɪsᴋ : {total}\n❐ ᴜsᴇᴅ sᴘᴀᴄᴇ : {used} ({disk_usage}%)\n❦ ꜰʀᴇᴇ sᴘᴀᴄᴇ : {free}\n\nᴠ2.9.1 [sᴛᴀʙʟᴇ]", show_alert=True)
 
     elif query.data == "start":
         buttons = [[
@@ -687,7 +687,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('sᴛᴀᴛᴜs​', callback_data="stats"),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source')
           ],[
-            InlineKeyboardButton('🛰 ʀᴇɴᴅᴇʀɪɴɢ ɪɴꜰᴏ ☁️', callback_data='statx')
+            InlineKeyboardButton('🛰 ʙᴏᴛ ʟɪᴠᴇ sᴛᴀᴛᴜs ɪɴꜰᴏ ☁️', callback_data='statx')
           ],[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
