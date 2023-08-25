@@ -12,7 +12,7 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=[https://github.com/](https://github.com/afluaflu123/K-bot)">
+<a href="https://heroku.com/deploy?template=https://github.com/afluaflu123/K-bot">
   <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" alt="Deploy">
 </a>
 </p>
