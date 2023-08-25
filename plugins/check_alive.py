@@ -1,10 +1,8 @@
 import random
-import re, asyncio, time, shutil, psutil, os, sys
-from pyrogram import Client, filters, enums
+import asyncio, time
+from pyrogram import Client, filters
 from pyrogram.types import *
-from info import BOT_START_TIME, ADMINS
-from utils import humanbytes  
-import time
+from info import BOT_START_TIME, ADMINS  
 
 CMD = ["/", "."]
 
