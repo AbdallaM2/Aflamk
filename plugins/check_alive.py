@@ -2,8 +2,9 @@ import random
 import asyncio, time
 from pyrogram import Client, filters
 from pyrogram.types import *
-from info import BOT_START_TIME, ADMINS  
+from info import ADMINS  
 
+BOT_START_TIME = 'time'
 CMD = ["/", "."]
 
 @Client.on_message(filters.new_chat_members)
