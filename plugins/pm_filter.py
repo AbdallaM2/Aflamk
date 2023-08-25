@@ -47,7 +47,6 @@ current_day = calendar.day_name[current_datetime.weekday()]
 BUTTONS = {}
 SPELL_CHECK = {}
 FILTER_MODE = {}
-BOT_START_TIME = time.time()
 
 @Client.on_message(filters.command('autofilter') & filters.user(ADMINS))
 async def fil_mod(client, message): 
@@ -597,7 +596,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("▣ ᴛɪᴘs ▣\n\n★ ᴛʏᴘᴇ ᴄᴏʀʀᴇᴄᴛ sᴘᴇʟʟɪɴɢ (ɢᴏᴏɢʟᴇ)\n\n★ ɪғ ʏᴏᴜ ɴᴏᴛ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇ ɪɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴛʜᴇɴ ᴛʜᴇ ɴᴇxᴛ sᴛᴇᴘ ɪs ᴄʟɪᴄᴋ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ.\n\n★ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ\n\n\© Team_KL", show_alert=True)
         
     elif query.data == "statx":
-        currentTime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - BOT_START_TIME))
+        currentTime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - time.time()))
         total, used, free = shutil.disk_usage(".")
         total = humanbytes(total)
         used = humanbytes(used)
