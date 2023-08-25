@@ -1,11 +1,10 @@
-# Kanged From @TroJanZheX
-# REDIRECT added https://github.com/Joelkb
 import asyncio
 import re
 import ast
 import math
 import random
-import datetime
+import psutil, shutil, sys
+
 lock = asyncio.Lock()
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
@@ -594,6 +593,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "tinfo":
         await query.answer("▣ ᴛɪᴘs ▣\n\n★ ᴛʏᴘᴇ ᴄᴏʀʀᴇᴄᴛ sᴘᴇʟʟɪɴɢ (ɢᴏᴏɢʟᴇ)\n\n★ ɪғ ʏᴏᴜ ɴᴏᴛ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇ ɪɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴛʜᴇɴ ᴛʜᴇ ɴᴇxᴛ sᴛᴇᴘ ɪs ᴄʟɪᴄᴋ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ.\n\n★ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ\n\n\© Team_KL", show_alert=True)
+        
+    elif query.data == "statx":
+        currentTime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - BOT_START_TIME))
+        total, used, free = shutil.disk_usage(".")
+        total = humanbytes(total)
+        used = humanbytes(used)
+        free = humanbytes(free)
+        cpu_usage = psutil.cpu_percent()
+        ram_usage = psutil.virtual_memory().percent
+        disk_usage = psutil.disk_usage('/').percent
+        await query.answer(f"🕔 𝖴𝗉𝗍𝗂𝗆𝖾 : {currentTime}\n🛠 𝖢𝖯𝖴 𝖴𝗌𝖺𝗀𝖾: {cpu_usage}\n🗜 𝖱𝖠𝖬 𝖴𝗌𝖺𝗀𝖾: {ram_usage}\n🗂 𝖳𝗈𝗍𝖺𝗅 𝖣𝗂𝗌𝗄 𝖲𝗉𝖺𝖼𝖾: {total}\n🗳 𝖴𝗌𝖾𝖽 𝖲𝗉𝖺𝖼𝖾: {used} ({disk_usage}%)\n📝 𝖥𝗋𝖾𝖾 𝖲𝗉𝖺𝖼𝖾: {free}", show_alert=True)
 
     elif query.data == "start":
         buttons = [[
@@ -674,7 +684,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('sᴛᴀᴛᴜs​', callback_data="stats"),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source')
           ],[
-            InlineKeyboardButton('🛰 ʀᴇɴᴅᴇʀɪɴɢ ɪɴꜰᴏ ☁️', callback_data='rendering_info')
+            InlineKeyboardButton('🛰 ʀᴇɴᴅᴇʀɪɴɢ ɪɴꜰᴏ ☁️', callback_data='statx')
           ],[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
