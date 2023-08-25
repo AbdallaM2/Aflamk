@@ -34,7 +34,7 @@ async def notify_admin(bot, message):
 
     report = message.reply_to_message if message.reply_to_message else message
     m = await message.reply_text(reply_message, disable_web_page_preview=True)
-    await asyncio.sleep(10)
+    await asyncio.sleep(60)
     await m.delete()
     await message.delete()
     for admin in administrators:
