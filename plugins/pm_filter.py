@@ -47,6 +47,7 @@ current_day = calendar.day_name[current_datetime.weekday()]
 BUTTONS = {}
 SPELL_CHECK = {}
 FILTER_MODE = {}
+BOT_START_TIME = time.time()
 
 @Client.on_message(filters.command('autofilter') & filters.user(ADMINS))
 async def fil_mod(client, message): 
