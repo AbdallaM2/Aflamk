@@ -12,3 +12,4 @@ pytz
 dnspython
 aiohttp
 telegraph
+psutil==5.9.4
