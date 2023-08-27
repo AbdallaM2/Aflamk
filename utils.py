@@ -41,6 +41,7 @@ class temp(object):
     B_NAME = None
     B_LINK = None
     SETTINGS = {}
+    KEYWORD = {}
 
 async def is_subscribed(bot, query):
     if not AUTH_CHANNEL and not REQ_CHANNEL:
