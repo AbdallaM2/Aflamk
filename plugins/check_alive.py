@@ -12,6 +12,6 @@ async def welcome(bot, message):
 async def goodbye(bot, message):
 	await message.delete()
 
-@Client.on_message(filters.regex("http") & filters.regex("www") | filters.regex("@") | filters.regex("https") | filters.regex("t.me") & filters.group)
+@Client.on_message(filters.regex("http") & filters.regex("www") | filters.regex("@") | filters.regex("https") | filters.regex("t.me") & filters.incoming)
 async def nolink(bot, message):
 	await message.delete()
