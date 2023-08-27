@@ -1,4 +1,4 @@
-        import logging
+import logging
 from struct import pack
 import re
 import base64
