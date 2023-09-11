@@ -125,55 +125,24 @@ async def start(client, message):
             )
         return
     
-    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help", "start", "hehe"]:
-        if message.command[1] == "subscribe":
-            await ForceSub(client, message)
-            return
+    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('⚚ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('👨🏻‍🎓 ᴏᴡɴᴇʀ', callback_data="owner_info")
-            ],[      
-            InlineKeyboardButton('💠 ʜᴇʟᴘ', callback_data='help2'),
-            InlineKeyboardButton('🌿 ᴀʙᴏᴜᴛ', callback_data='about')
-            ],[
-            InlineKeyboardButton('🥇 ᴛᴇᴀᴍ ᴋʟ ᴏꜰꜰɪᴄɪᴀʟ ʟɪɴᴋs 🥇', callback_data="group_info")
-        ]]  
+            InlineKeyboardButton('തൊടരുത്', callback_data='start')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        def convert_utc_to_indian(utc_time):
-            utc = pytz.timezone('UTC')
-            indian = pytz.timezone('Asia/Kolkata')
-            utc_time = datetime.strptime(utc_time, "%Y-%m-%d %H:%M:%S")
-            utc_time = utc.localize(utc_time)
-            indian_time = utc_time.astimezone(indian)
-            return indian_time
-        
-        def get_greeting(indian_time):
-            hour = indian_time.hour
-            if 5 <= hour < 12:
-                return "Good morning "
-            elif 12 <= hour < 16:
-                return "Good afternoon "
-            elif 16 <= hour < 20:
-                return "Good evening "
-            else:
-                return "Good night "
-        
-        utc_time_str = "2023-07-22 10:30:00"
-        indian_time = convert_utc_to_indian(utc_time_str)
-        greeting = get_greeting(indian_time)
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.SUR_TXT.format(greeting, message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-        await message.delete()
         return
     data = message.command[1]
-    if not file_id:
+    try:
+        pre, file_id = data.split('_', 1)
+    except:
         file_id = data
+        pre = ""
     if data.split("-", 1)[0] == "BATCH":
         sts = await message.reply("Please wait")
         file_id = data.split("-", 1)[1]
