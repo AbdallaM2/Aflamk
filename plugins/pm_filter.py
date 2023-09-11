@@ -50,11 +50,6 @@ FRESH = {}
 SPELL_CHECK = {}
 FILTER_MODE = {}
 BOT_START_TIME = time.time()
-BUTTON = {}
-BUTTONS0 = {}
-BUTTONS1 = {}
-BUTTONS2 = {}
-SPELL_CHECK = {}
 
 @Client.on_message(filters.command('autofilter') & filters.user(ADMINS))
 async def fil_mod(client, message): 
