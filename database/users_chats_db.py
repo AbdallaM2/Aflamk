@@ -9,7 +9,7 @@ class Database:
         self.db = self._client[database_name]
         self.col = self.db.users
         self.grp = self.db.groups
-
+        self.req = self.db.reqs
 
     def new_user(self, id, name):
         return dict(
@@ -71,19 +71,33 @@ class Database:
     async def get_all_users(self):
         return self.col.find({})
     
+    async def add_req(self, user_id, first_name, username, date):
+        try:
+            await self.req.insert_one({"_id": int(user_id),"user_id": int(user_id), "first_name": first_name, "username": username, "date": date})
+        except:
+            pass
+
+    async def get_req(self, user_id):
+        return await self.req.find_one({"user_id": int(user_id)})
+
+    async def delete_all_req(self):
+        await self.req.delete_many({})
+
+    async def get_all_req_count(self):
+        count = 0
+        async for req in self.req.find({}):
+            count += 1
+        return count
 
     async def delete_user(self, user_id):
         await self.col.delete_many({'id': int(user_id)})
-
 
     async def get_banned(self):
         users = self.col.find({'ban_status.is_banned': True})
         chats = self.grp.find({'chat_status.is_disabled': True})
         b_chats = [chat['id'] async for chat in chats]
         b_users = [user['id'] async for user in users]
-        return b_users, b_chats
-    
-
+        return b_users, b_chats 
 
     async def add_chat(self, chat, title):
         chat = self.new_group(chat, title)
