@@ -219,11 +219,11 @@ Name - {}
     IMDB_TEMPLATE_TXT = """
 <b>⍞ TɪᴛLᴇ : {title}
 ⌬ YᴇAʀ : {year}
-⎙ LᴀNɢUᴀGᴇ : {languages}
-★ RᴀTɪNɢ : {rating} / 10.0
+♾ LᴀNɢUᴀGᴇ : {languages}
+⛦ RᴀTɪNɢ : {rating} / 10.0
 〄 QᴜAʟIᴛY : HDRip
-⌚️ Tɪᴍᴇ : {current_time}
-📆 Dᴀᴛᴇ : {current_date}</b>"""
+⏱ ᴛɪᴍᴇ : {current_time}
+⟁ ᴅᴀᴛᴇ : {current_date}</b>"""
 
     CUSTOM_FILE_CAPTION = """<b>🗂️ Fɪʟᴇ Nᴀᴍᴇ :- <code>{file_name}</code>
 
