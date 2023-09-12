@@ -1033,6 +1033,7 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
         settings = await get_settings(message.chat.id)
     temp.KEYWORD[message.from_user.id] = search
+    req = message.from_user.id if message.from_user else 0
     pre = 'filep' if settings['file_secure'] else 'file'
     if settings["button"]:
         btn = [
