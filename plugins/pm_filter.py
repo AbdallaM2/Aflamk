@@ -182,7 +182,7 @@ async def next_page(bot, query):
     btn.insert(0, 
         [
             InlineKeyboardButton(f'🗂 Fɪʟᴇs: {total}', 'dupe'),
-            InlineKeyboardButton(f'★ Iɴꜰᴏ', 'reqinfo')
+            InlineKeyboardButton(f'⟮ Iɴꜰᴏ ⟯', 'reqinfo')
         ]
     )
     
@@ -195,19 +195,19 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"🐾 ᴘᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
+             InlineKeyboardButton(f"➶ ᴘᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"{math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("ɴᴇxᴛ​ ⇛", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("ɴᴇxᴛ​ ➾", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🐾 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("ɴᴇxᴛ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton(f"➶ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("ɴᴇxᴛ ➾", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -576,7 +576,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(f"✯ താഴെയുള്ള ബട്ടണിൽ വേണ്ട ക്വാളിറ്റി യിൽ ക്ലിക്ക് ചെയ്താൽ കിട്ടും⚡\n\n✯ 𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲 𝖻𝖾𝗅𝗈𝗐 𝖻𝗎𝗍𝗍𝗈𝗇 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍 🎯 \n\n➠ © @Team_KL",show_alert=True)
 
     elif query.data == "reqinfo":
-        await query.answer("✯ Movies - Jailer 2023\n• Series - Dark S01E01\n\n✯ Correct Spelling in English Letters Only And ❌ Don't Use Stylish Font\n\n✯ Not Available Theater Print Files !\n\n ➠ © @Team_KL", show_alert=True)
+        await query.answer("✯ Movies - Jailer 2023\n✯ Series - Dark S01E01\n\n✯ Correct Spelling in English Letters Only And ❌ Don't Use Stylish Font\n\n✯ Not Available Theater Print Files !\n\n ➠ © @Team_KL", show_alert=True)
 
     elif query.data == "rendering_info":
         await query.answer(text=script.RENDERING_TXT, show_alert=True)
@@ -1038,7 +1038,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, 
         [
             InlineKeyboardButton(f"🦋 {search}", "neosub"),
-            InlineKeyboardButton(f"★ Iɴꜰᴏ", "reqinfo")       
+            InlineKeyboardButton(f"⟮ Iɴꜰᴏ ⟯", "reqinfo")       
         ]
     )
 
@@ -1048,7 +1048,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f" 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="ɴᴇxᴛ​ ⇛", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="ɴᴇxᴛ​ ➾", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
