@@ -286,7 +286,7 @@ async def start(client, message):
             k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This file will be deleted from here within <u>10 minute</u> as it has (Due to Copyright Issues) ...!\n\nPlease Forward This File to your Saved Messages And Start Download There ☺️.\n\nകോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!.</b>",quote=True)
             await asyncio.sleep(200)
             await msg.delete()
-            await k.edit_text("<b><i>ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ 😁</i></b>",reply_markup=InlineKeyboardMarkup(btn))
+            await k.edit_text("<b><i>• ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.</i></b>",reply_markup=InlineKeyboardMarkup(btn))
             return
         except:
             pass
@@ -325,7 +325,7 @@ async def start(client, message):
     k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This file will be deleted from here within <u>10 minute</u> as it has (Due to Copyright Issues) ...!\n\nPlease Forward This File to your Saved Messages And Start Download There ☺️.\n\nകോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!.</b>",quote=True)
     await asyncio.sleep(200)
     await msg.delete()
-    await k.edit_text("<b><i>ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ 😁</i></b>",reply_markup=InlineKeyboardMarkup(btn))
+    await k.edit_text("<b><i>• ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.</i></b>",reply_markup=InlineKeyboardMarkup(btn))
     return   
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
