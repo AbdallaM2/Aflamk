@@ -10,13 +10,11 @@ from typing import Dict, List, Union
 from pyrogram import Client
 
 id_pattern = re.compile(r'^.\d+$')
+
 def is_enabled(value, default):
-    if value.lower() in ["true", "yes", "1", "enable", "y"]:
-        return True
-    elif value.lower() in ["false", "no", "0", "disable", "n"]:
-        return False
-    else:
-        return default
+    if value.strip().lower() in ["on", "true", "yes", "1", "enable", "y"]: return True
+    elif value.strip().lower() in ["off", "false", "no", "0", "disable", "n"]: return False
+    else: return default
 
 class evamaria(Client):
     filterstore: Dict[str, Dict[str, str]] = defaultdict(dict)
@@ -88,8 +86,8 @@ DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 PORT = os.environ.get("PORT", "8080")
 NO_RESULTS_MSG = bool(environ.get('NO_RESULTS_MSG', False))
-MAX_BTN = int(environ.get('MAX_BTN', "7"))
-S_GROUP = environ.get('S_GROUP',"https://t.me/kl_Group1")
+MAX_BTN = int(environ.get('MAX_BTN', "6"))
+S_GROUP = environ.get('S_GROUP',"https://t.me/KLMovieGroup")
 MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/Team_KL")
 FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/+xCWaS4G_Jkg4YzI1")
 MSG_ALRT = environ.get('MSG_ALRT', '⏤͟͟͞ ♡︎ Nᴀɴᴄʏ ²·⁰ 💜')
@@ -111,16 +109,6 @@ FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
-
-#Fsub
-auth_channel = environ.get('AUTH_CHANNEL')
-AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-# Set to False inside the bracket if you don't want to use Request Channel else set it to Channel ID
-REQ_CHANNEL = environ.get("REQ_CHANNEL", False)
-REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False
-JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
-
-SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
