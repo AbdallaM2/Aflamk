@@ -109,7 +109,7 @@ async def get_search_results(query, file_type=None, max_results=(MAX_BTN), offse
     files = await cursor.to_list(length=max_results)
 
     return files, next_offset, total_results
-
+    
 async def get_bad_files(query, file_type=None, max_results=100, offset=0, filter=False):
     """For given query return (results, next_offset)"""
     query = query.strip()
