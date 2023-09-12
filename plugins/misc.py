@@ -96,6 +96,7 @@ async def user_info(client, message):
             disable_notification=True
         )
     await status_message.delete()
+    await message.delete()
 
 @Client.on_message(filters.command(["imdb", 'search']))
 async def imdb_search(client, message):
