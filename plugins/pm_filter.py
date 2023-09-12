@@ -15,7 +15,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, FILE_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, NOR_IMG, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, IMDB_TEMPLATE, NO_RESULTS_MSG, SPELL_IMG, MSG_ALRT, FILE_FORWARD, MAIN_CHANNEL, LOG_CHANNEL, REQ_CHANNEL, SPELL_IMG
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, IMDB_TEMPLATE, NO_RESULTS_MSG, SPELL_IMG, MSG_ALRT, FILE_FORWARD, MAIN_CHANNEL, LOG_CHANNEL, SPELL_IMG
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -185,17 +185,12 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f"♀️ {search}", "dupe"),
-            InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total}', 'dupe')
+            InlineKeyboardButton(f"♀️ {search}", "neosub"),
+            InlineKeyboardButton(f'Iɴꜰᴏ', 'reqinfo'),
+            InlineKeyboardButton(f'🗂 Fɪʟᴇs: {total}', 'dupe')
         ]
     )
-    btn.insert(1, 
-         [
-             InlineKeyboardButton(f'Iɴꜰᴏ', 'reqinfo'),             
-             InlineKeyboardButton(f'Tɪᴘs', 'tinfo')
-         ]
-    )
-
+    
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -582,8 +577,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
 
+    elif query.data == "neosub": 
+        await query.answer(f"✯ താഴെയുള്ള ബട്ടണിൽ വേണ്ട ക്വാളിറ്റി യിൽ ക്ലിക്ക് ചെയ്താൽ കിട്ടും⚡\n\n✯ 𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲 𝖻𝖾𝗅𝗈𝗐 𝖻𝗎𝗍𝗍𝗈𝗇 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍 🎯 \n➠ © @Team_KL",show_alert=True)
+
     elif query.data == "reqinfo":
-        await query.answer("⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nᴀꜰᴛᴇʀ 10 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\nɪꜰ ʏᴏᴜ ᴅᴏ ɴᴏᴛ ꜱᴇᴇ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ / sᴇʀɪᴇs ꜰɪʟᴇ, ʟᴏᴏᴋ ᴀᴛ ᴛʜᴇ ɴᴇxᴛ ᴘᴀɢᴇ\n\n© Team_KL", show_alert=True)
+        await query.answer("❗️INFORMATION❗️\n\n• Movies - Leo\n• Series - Dark S01E01\n\n• Correct Spelling in English Letters Only And ❌ Don't Use Stylish Font\n\n• Not Available Theater Print Files !\n\n• After 10 Minutes This Message Will be Auto Delete !", show_alert=True)
 
     elif query.data == "finfo":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴀᴠᴀᴛᴀʀ: ᴛʜᴇ ᴡᴀʏ ᴏғ ᴡᴀᴛᴇʀ\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Team_KL", show_alert=True)
@@ -593,9 +591,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "rendering_info":
         await query.answer(text=script.RENDERING_TXT, show_alert=True)
-    
-    elif query.data == "fmod":
-        await query.answer(text="𝙲𝚘𝚖𝚒𝚗𝚐 𝚜𝚘𝚘𝚗... 😊", show_alert=True)
 
     elif query.data == "whyjoin":
         await query.answer(text="⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nIғ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ᴄᴏᴘʏ ʀɪɢʜᴛ ɪꜱ ʟᴏꜱᴛ , ᴡʜᴇɴ ᴀ ɴᴇᴡ ᴄʜᴀɴɴᴇʟ ɪꜱ ꜱᴛᴀʀᴛᴇᴅ, ɪᴛ ᴡɪʟʟ ʙᴇ ɴᴏᴛɪғɪᴇᴅ ᴏɴ ᴛʜɪꜱ ᴄʜᴀɴɴᴇʟ 🙂", show_alert=True)
@@ -1103,7 +1098,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f"♀️ {search}", "dupe"),
+            InlineKeyboardButton(f"♀️ {search}", "neosub"),
             InlineKeyboardButton(f'🗂 ꜰɪʟᴇs: {total_results}', 'dupe')       
         ]
     )
