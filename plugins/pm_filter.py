@@ -1056,6 +1056,11 @@ async def auto_filter(client, msg, spoll=False):
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
+    time_zone = pytz.timezone('Asia/Kolkata')
+    current_datetime = datetime.datetime.now(time_zone)
+    current_date = current_datetime.strftime('%d-%m-%Y')
+    current_time = current_datetime.strftime('%I:%M:%S %p')
+    current_day = calendar.day_name[current_datetime.weekday()]
     if imdb:
         cap = TEMPLATE.format(
             query=search,
@@ -1086,16 +1091,19 @@ async def auto_filter(client, msg, spoll=False):
             plot=imdb['plot'],
             rating=imdb['rating'],
             url=imdb['url'],
+            current_date=current_date,
+            current_time=current_time,
+            current_day=current_day
             **locals()
         )
     else:
-        cap = f"┏⍞ Tɪᴛɪʟᴇ :{search}\n┣❐  Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention}\n┣⎙ Fɪʟᴇs : {total_results}\n┗〄 Gʀᴏᴜᴘ :  {message.chat.title}\n\nᴀꜰᴛᴇʀ 10 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ."
+        cap = f"<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴅᴜʟǫᴜʀ](https://t.me/Dulquarobot)\n┗ 🍁 ᴄʜᴀɴɴᴇʟ : [ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ](https://t.me/CLMlinkz)\n\n⌚️ Tɪᴍᴇ : {current_time}\n📆 Dᴀᴛᴇ : {current_date}\n\nᴀꜰᴛᴇʀ 30 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\n<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  [ᴄɪɴɪᴍᴀʟᴏᴋʜᴀᴍ](https://t.me/Cinimalokham)</i></b>"
     if imdb and imdb.get('poster'):
         try:
             pic_fi=await message.reply_photo(photo='https://telegra.ph/file/60d2e897bfdf063f81545.jpg', caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(200)
                     await pic_fi.delete()
                     await message.delete()
             except KeyError:
@@ -1103,7 +1111,7 @@ async def auto_filter(client, msg, spoll=False):
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(200)
                     await pic_fi.delete()
                     await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
@@ -1112,7 +1120,7 @@ async def auto_filter(client, msg, spoll=False):
             pic_fil=await message.reply_photo(photo='https://telegra.ph/file/60d2e897bfdf063f81545.jpg', caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(200)
                     await pic_fil.delete()
                     await message.delete()
             except KeyError:
@@ -1120,7 +1128,7 @@ async def auto_filter(client, msg, spoll=False):
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(200)
                     await pic_fil.delete()
                     await message.delete()
         except Exception as e:
@@ -1128,7 +1136,7 @@ async def auto_filter(client, msg, spoll=False):
             no_pic=await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(200)
                     await no_pic.delete()
                     await message.delete()
             except KeyError:
@@ -1136,14 +1144,14 @@ async def auto_filter(client, msg, spoll=False):
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(200)
                     await no_pic.delete()
                     await message.delete()
     else:
         no_fil=await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         try:
             if settings['auto_delete']:
-                await asyncio.sleep(300)
+                await asyncio.sleep(200)
                 await no_fil.delete()
                 await message.delete()
         except KeyError:
@@ -1151,7 +1159,7 @@ async def auto_filter(client, msg, spoll=False):
             await save_group_settings(grpid, 'auto_delete', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_delete']:
-                await asyncio.sleep(300)
+                await asyncio.sleep(200)
                 await no_fil.delete()
                 await message.delete()
     if spoll:
