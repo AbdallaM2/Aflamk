@@ -181,7 +181,7 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🗂 Fɪʟᴇs: {total}', 'dupe'),
+            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'dupe'),
             InlineKeyboardButton(f'⟮ Iɴꜰᴏ ⟯', 'reqinfo')
         ]
     )
@@ -1037,7 +1037,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f"🦋 {search}", "neosub"),
+            InlineKeyboardButton(f"⇓ {search} ⇓", "neosub"),
             InlineKeyboardButton(f"⟮ Iɴꜰᴏ ⟯", "reqinfo")       
         ]
     )
@@ -1096,7 +1096,7 @@ async def auto_filter(client, msg, spoll=False):
             current_day=current_day
         )
     else:
-        cap = f"<b>┏ ⍞ Tɪᴛɪʟᴇ : {search}\n┣ ❐ ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ 〄 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [♡ Nᴀɴᴄʏ ²·⁰](https://t.me/Oru_adaar_Robot)\n┗ ⌬ ᴄʜᴀɴɴᴇʟ : [ᴋᴇʀᴀʟᴀ ʀᴏᴄᴋᴇʀs](https://t.me/KLMovieGroup)\n\n⟁ ᴛɪᴍᴇ : {current_time}\n⟐ ᴅᴀᴛᴇ : {current_date}\n\n<i>ᴀꜰᴛᴇʀ 10 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.<i></b>"
+        cap = f"<b>┏ ⍞ Tɪᴛɪʟᴇ : {search}\n┣ ❐ ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ 〄 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [♡ Nᴀɴᴄʏ ²·⁰](https://t.me/Oru_adaar_Robot)\n┗ ⌬ ᴄʜᴀɴɴᴇʟ : [ᴋᴇʀᴀʟᴀ ʀᴏᴄᴋᴇʀs](https://t.me/KLMovieGroup)\n\n⏱ ᴛɪᴍᴇ : {current_time}\n⟁ ᴅᴀᴛᴇ : {current_date}\n\n<i>ᴀꜰᴛᴇʀ 10 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.<i></b>"
     if imdb and imdb.get('poster'):
         try:
             pic_fi=await message.reply_photo(photo='https://telegra.ph/file/60d2e897bfdf063f81545.jpg', caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
