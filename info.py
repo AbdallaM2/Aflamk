@@ -46,12 +46,12 @@ BOT_TOKEN = environ.get('BOT_TOKEN', 'None')
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/35fc08358edc12cc1e21e.jpg')).split()
-NOR_IMG = environ.get('NOR_IMG', 'https://telegra.ph/file/c27901b78e7c1b95740d6.jpg')
+NOR_IMG = environ.get('NOR_IMG', 'https://telegra.ph/file/60d2e897bfdf063f81545.jpg')
 SPELL_IMG = environ.get('SPELL_IMG',"https://graph.org/file/cd9d7825d4c11195c19df.jpg")
 
 # Welcome area
 MELCOW_IMG = environ.get('MELCOW_IMG',"https://telegra.ph/file/4cd231fbe9085ec49e75d.jpg")
-MELCOW_VID = environ.get('MELCOW_VID',"https://telegra.ph/file/b26637d70f3630a7e0fa1.mp4")
+MELCOW_VID = environ.get('MELCOW_VID',"")
 
 #Auto approve 
 #In private group or channel must enable request admin approval 
