@@ -26,9 +26,7 @@ BATCH_FILES = {}
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        buttons = [[
-                    InlineKeyboardButton('〆 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                  ],[
+        buttons = [[             
                     InlineKeyboardButton('• ᴄʜᴀɴɴᴇʟ •', url='https://t.me/team_kl'),
                     InlineKeyboardButton('• ᴄʜᴇᴄᴋ ᴘᴍ •', url=f"https://t.me/{temp.U_NAME}?start=help")
                   ]]
@@ -50,8 +48,6 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('⚚ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
             InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
             InlineKeyboardButton('👨🏻‍🎓 ᴏᴡɴᴇʀ', callback_data="owner_info")
             ],[      
@@ -127,7 +123,7 @@ async def start(client, message):
     
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('തൊടരുത്', callback_data='start')
+            InlineKeyboardButton('🦋 sᴜʀᴘʀɪsᴇ 🦋', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
