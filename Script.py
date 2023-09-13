@@ -168,11 +168,11 @@ This module only works for my admins
 • /deletefiles - <code>Delete CamRip and PreDvD files delete from database </code>"""
 
 
-    STATUS_TXT = """<b>▶ Fɪʟᴇs Sᴀᴠᴇᴅ: <code>{}</code>
-▶ Tᴏᴛᴀʟ Usᴇʀs: <code>{}</code>
-▶ Tᴏᴛᴀʟ Cʜᴀᴛs: <code>{}</code>
-▶ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB
-▶ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB</b>"""
+    STATUS_TXT = """<b>⎇ Fɪʟᴇs Sᴀᴠᴇᴅ: <code>{}</code>
+⎇ Tᴏᴛᴀʟ Usᴇʀs: <code>{}</code>
+⎇ Tᴏᴛᴀʟ Cʜᴀᴛs: <code>{}</code>
+⎇ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB
+⎇ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB</b>"""
 
     LOG_TEXT_G = """#NewUser
 
@@ -222,7 +222,8 @@ Name - {}
 〄 QᴜAʟIᴛY : HDRip
 ───────────────
 ⛯ TɪᴍMᴇ : {current_time}
-⟁ DᴀTᴇ : {current_date}</b>"""
+⟁ DᴀTᴇ : {current_date}
+───────────────</b>"""
 
     CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
 
