@@ -222,16 +222,14 @@ Name - {}
 ✇ LᴀNɢUᴀGᴇ : {languages}
 ⛦ RᴀTɪNɢ : {rating} / 10.0
 〄 QᴜAʟIᴛY : HDRip
-⛯ ᴛɪᴍᴇ : {current_time}
-⟁ ᴅᴀᴛᴇ : {current_date}</b>"""
+⛯ TɪᴍMᴇ : {current_time}
+⟁ DᴀTᴇ : {current_date}</b>"""
 
-    CUSTOM_FILE_CAPTION = """<b>🗂️ Fɪʟᴇ Nᴀᴍᴇ :- <code>{file_name}</code>
+    CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- <code>{file_name}</code>
 
-♀️ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
+⋟ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
 
-💥 ᴄʜᴀɴɴᴇʟ :- @Team_KL
-
-@KLMovieGroup | @KL_Group2</b>"""
+⋟ @KLMovieGroup | @KL_Group2</b>"""
 
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
