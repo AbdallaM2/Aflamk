@@ -526,7 +526,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         title = files.file_name
         size = get_size(files.file_size)
         f_caption = files.caption
-         if CUSTOM_FILE_CAPTION:
+        if CUSTOM_FILE_CAPTION:
             try:
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
                                                        file_size='' if size is None else size,
@@ -536,15 +536,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
+        await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
-            protect_content=True if ident == 'checksubp' else False
-        )
-    elif query.data == "pages":
-        await query.answer()
-            
+            protect_content=True if ident == 'checksubp' else False        
+        )          
     elif query.data.startswith("killfilesdq"):
         ident, keyword = query.data.split("#")
         await query.message.edit_text(f"<b>Fᴇᴛᴄʜɪɴɢ Fɪʟᴇs ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {keyword} ᴏɴ DB... Pʟᴇᴀsᴇ ᴡᴀɪᴛ...</b>")
@@ -570,6 +568,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.message.edit_text(f'Eʀʀᴏʀ: {e}')
             else:
                 await query.message.edit_text(f"<b>Pʀᴏᴄᴇss Cᴏᴍᴘʟᴇᴛᴇᴅ ғᴏʀ ғɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ !\n\nSᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ {str(deleted)} ғɪʟᴇs ғʀᴏᴍ DB ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {keyword}.</b>")
+
+    elif query.data == "pages":
+        await query.answer()
 
     elif query.data == "neosub": 
         await query.answer(f"✯ താഴെയുള്ള ബട്ടണിൽ വേണ്ട ക്വാളിറ്റി യിൽ ക്ലിക്ക് ചെയ്താൽ കിട്ടും⚡\n\n✯ 𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲 𝖻𝖾𝗅𝗈𝗐 𝖻𝗎𝗍𝗍𝗈𝗇 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍 🎯 \n\n➠ © @Team_KL",show_alert=True)
