@@ -7,8 +7,8 @@ from utils import broadcast_messages
 import asyncio
 from pyrogram.errors import FloodWait
 
-@Client.on_message(filters.command("speed") & filters.user(ADMINS) & filters.reply)
-# pari
+@Client.on_message(filters.command("speedcast") & filters.user(ADMINS) & filters.reply)
+# https://t.me/GetTGLink/4178
 async def speed_verupikkals(bot, message):
     users = await db.get_all_users()
     b_msg = message.reply_to_message
@@ -29,7 +29,7 @@ async def speed_verupikkals(bot, message):
         except Exception as e:
             failed += 1
     time_taken = datetime.timedelta(seconds=int(time.time()-start_time))
-    await sts.edit(f"Completed\nTotal : {total_users}\nSuccess : {success}\nFailed : {failed}\nTime Taken : {time_taken}")
+    await sts.edit(f"Completed\nTotal : {total_users}\nSuccess : {success}\nFailed : {failed}\nTime Taken : {time_taken}")     
 
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 # https://t.me/GetTGLink/4178
