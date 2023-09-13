@@ -12,12 +12,11 @@ class script(object):
 # ⚠️ Please don't change our credits 𝚃𝙷𝙰𝙽𝙺𝚂 𝚃𝙾 & 𝙳𝙴𝚅 👇🏻
 
     ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Oru_adaar_Robot'>Nᴀɴᴄʏ ²·⁰</a>
-✯ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/Hacker_Jr'>×͜× HᴀᴄKᴇʀ Jʀ 〆⁪⁬⁮⁮⁮</a>
+✯ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/Hacker_Jr'>HᴀᴄKᴇʀ Jʀ 〆⁪⁬⁮⁮⁮</a>
 ✯ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʀᴏɢʀᴀᴍ</a>
 ✯ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/'>Pʏᴛʜᴏɴ 3</a>
 ✯ Dᴀᴛᴀ Bᴀsᴇ: <a href='https://cloud.mongodb.com/'>Mᴏɴɢᴏ Dʙ</a>
-✯ Bᴏᴛ Sᴇʀᴠᴇʀ: <a href='https://heroku.com/'>Hᴇʀᴏᴋᴜ</a>
-✯ Bᴜʟʟᴅ Sᴛᴀᴛᴜs: <code>ᴠ2.0.4 [ Bᴇᴛᴀ ]</code></b>"""
+✯ Bᴏᴛ Sᴇʀᴠᴇʀ: <a href='https://heroku.com/'>Hᴇʀᴏᴋᴜ</a></b>
 
     SOURCE_TXT = """<b>NOTE:
 ⚠️ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ
@@ -169,15 +168,14 @@ This module only works for my admins
 • /deletefiles - <code>Delete CamRip and PreDvD files delete from database </code>"""
 
 
-    STATUS_TXT = """<b>── • ❰ 📂 Bot DB Status 📂❱ • ──
-
-📑 Fɪʟᴇs Sᴀᴠᴇᴅ: <code>{}</code>
-👤 Tᴏᴛᴀʟ Usᴇʀs: <code>{}</code>
-♻️ Tᴏᴛᴀʟ Cʜᴀᴛs: <code>{}</code>
-🗃️ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
-🆓 Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱</b>"""
+    STATUS_TXT = """<b>▶ Fɪʟᴇs Sᴀᴠᴇᴅ: <code>{}</code>
+▶ Tᴏᴛᴀʟ Usᴇʀs: <code>{}</code>
+▶ Tᴏᴛᴀʟ Cʜᴀᴛs: <code>{}</code>
+▶ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB
+▶ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB</b>"""
 
     LOG_TEXT_G = """#NewUser
+
  <b>᚛› 𝐆𝐫𝐨𝐮𝐩 ⪼ {a}(<code>{b}</code>)</b>
  <b>᚛› 𝐆 𝐈𝐃 ⪼ @{c}
  <b>᚛› 𝐓𝐨𝐭𝐚𝐥 𝐌𝐞𝐦𝐛𝐞𝐫𝐬 ⪼ {d}</b>
