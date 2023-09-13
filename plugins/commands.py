@@ -261,10 +261,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                      InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
-                      InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                   ],[
-                      InlineKeyboardButton("Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ", url="t.me/cinema_villa_grp")
+                      InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Cʜᴀɴɴᴇʟ ♽", url="t.me/+BtMIPZcGdt85ZTA1")
                      ]
                     ]
                 )
@@ -283,7 +280,7 @@ async def start(client, message):
             btn = [[
                 InlineKeyboardButton("⚠️ Dᴇʟᴇᴛᴇ Fɪʟᴇ ⚠️", callback_data='close_data')
             ]]
-            k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This file will be deleted from here within <u>10 minute</u> as it has (Due to Copyright Issues) ...!\n\nPlease Forward This File to your Saved Messages And Start Download There ☺️.\n\nകോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!.</b>",quote=True)
+            k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u> As It Has (Due To Copyright Issues) ...!\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
             await asyncio.sleep(200)
             await msg.delete()
             await k.edit_text("<b><i>• ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.</i></b>",reply_markup=InlineKeyboardMarkup(btn))
@@ -309,20 +306,17 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
-            [
-             [
-              InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url='https://www.youtube.com/@FoxMoviesHub'),
-              InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url='https://www.youtube.com/@FoxMoviesHub')
-           ],[
-              InlineKeyboardButton("Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ", url="https://www.youtube.com/@FoxMoviesHub")
-             ]
-            ]
-        )
-    )
+                    [
+                     [
+                      InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Cʜᴀɴɴᴇʟ ♽", url="t.me/+BtMIPZcGdt85ZTA1")
+                     ]
+                    ]
+                )
+            )
     btn = [[
         InlineKeyboardButton("⚠️ Dᴇʟᴇᴛᴇ Fɪʟᴇ ⚠️", callback_data='close_data')
     ]]
-    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This file will be deleted from here within <u>10 minute</u> as it has (Due to Copyright Issues) ...!\n\nPlease Forward This File to your Saved Messages And Start Download There ☺️.\n\nകോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!.</b>",quote=True)
+    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u> As It Has (Due To Copyright Issues) ...!\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
     await asyncio.sleep(200)
     await msg.delete()
     await k.edit_text("<b><i>• ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.</i></b>",reply_markup=InlineKeyboardMarkup(btn))
