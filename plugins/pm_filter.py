@@ -232,8 +232,9 @@ async def advantage_spoll_choker(bot, query):
     movie = movies[(int(movie_))]
     movie = re.sub(r"[:\-]", " ", movie)
     movie = re.sub(r"\s+", " ", movie).strip()
-    await query.message.edit(text=script.TOP_ALRT_MSG)
-    await query.message.delete()
+    z=await query.message.edit(text=script.TOP_ALRT_MSG)
+    await asyncio.sleep(2)
+    await z.delete()
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
