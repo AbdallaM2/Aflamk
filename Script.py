@@ -228,8 +228,10 @@ Name - {}
     CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
 
 ⋟ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
-
-⋟ @KLMovieGroup • @KL_Group2</b>"""
+───────────────
+⋟ @KLMovieGroup
+⋟ @KL_Group2
+───────────────<</b>"""
 
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
