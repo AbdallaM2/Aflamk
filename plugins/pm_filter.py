@@ -232,7 +232,7 @@ async def advantage_spoll_choker(bot, query):
     movie = movies[(int(movie_))]
     movie = re.sub(r"[:\-]", " ", movie)
     movie = re.sub(r"\s+", " ", movie).strip()
-    await query.answer(script.TOP_ALRT_MSG)
+    await query.message.edit(text=script.TOP_ALRT_MSG)
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -1030,13 +1030,9 @@ async def auto_filter(client, msg, spoll=False):
         else:
             return
     else:
+        settings = await get_settings(msg.message.chat.id)
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_text(f"<b><i> ⚠️ sᴇᴀʀᴄʜɪɴɢ ʏᴏᴜʀ ʀᴇsᴜʟᴛs 🔎</i></b>")
-        settings = await get_settings(message.chat.id)
-        await asyncio.sleep(2)
-        await m.delete()
-        await msg.message.delete()
     pre = 'filep' if settings['file_secure'] else 'file'
     if settings["button"]:
         btn = [
