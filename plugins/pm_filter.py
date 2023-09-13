@@ -533,7 +533,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         buttons = [[
-            InlineKeyboardButton('𖣘 𝗠𝗢𝗩𝗜𝗘𝗦 𝗚𝗥𝗢𝗨𝗣 𖣘', url='https://t.me/team_kl')
+            InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Cʜᴀɴɴᴇʟ ♽", url="t.me/+BtMIPZcGdt85ZTA1")
          ]]
         await query.answer()
         await client.send_cached_media(
@@ -654,7 +654,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('sᴛᴀᴛᴜs​', callback_data="stats"),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source')
           ],[
-            InlineKeyboardButton('🛰 ʙᴏᴛ ʟɪᴠᴇ sᴛᴀᴛᴜs ɪɴꜰᴏ ☁️', callback_data='statx')
+            InlineKeyboardButton('🛰 ʙᴏᴛ sᴇʀᴠᴇʀ sᴛᴀᴛᴜs ɪɴꜰᴏ ☁️', callback_data='statx')
           ],[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
