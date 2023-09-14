@@ -222,7 +222,7 @@ Name - {}
 〄 QᴜAʟIᴛY : HDRip
 ╭───────────────╮
 ⛯ TɪᴍMᴇ : {current_time}  ◆  
-⟁ DᴀTᴇ : {current_date}   ◆ 
+⟁ DᴀTᴇ : {current_date}     ◆ 
 ╰───────────────╯</b>"""
 
     CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
