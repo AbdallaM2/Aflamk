@@ -256,7 +256,7 @@ async def start(client, message):
             btn = [[
                 InlineKeyboardButton("⚠️ Dᴇʟᴇᴛᴇ Fɪʟᴇ ⚠️", callback_data='close_data')
             ]]
-            k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u> As It Has (Due To Copyright Issues) ...!\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
+            k = await msg.reply("<b><u>❗️❗️IMPORTANT❗️️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u> As It Has (Due To Copyright Issues) ...!\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
             await asyncio.sleep(100)
             await msg.delete()
             await k.edit_text("<b><i>• ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.</i></b>",reply_markup=InlineKeyboardMarkup(btn))
@@ -292,7 +292,7 @@ async def start(client, message):
     btn = [[
         InlineKeyboardButton("⚠️ Dᴇʟᴇᴛᴇ Fɪʟᴇ ⚠️", callback_data='close_data')
     ]]
-    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u> As It Has (Due To Copyright Issues) ...!\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
+    k = await msg.reply("<b><u>❗️❗️IMPORTANT❗️️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u> As It Has (Due To Copyright Issues) ...!\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
     await asyncio.sleep(100)
     await msg.delete()
     await k.edit_text("<b><i>• ʏᴏᴜʀ ꜰɪʟᴇ ɪs sᴜᴄᴄᴇssꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ.</i></b>",reply_markup=InlineKeyboardMarkup(btn))
