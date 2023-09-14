@@ -221,14 +221,13 @@ Name - {}
 ⛦ RᴀTɪNɢ : {rating} / 10.0
 〄 QᴜAʟIᴛY : HDRip
 ╭───────────────╮
-⛯ TɪᴍMᴇ : {current_time}  ◆  
-⟁ DᴀTᴇ : {current_date}     ◆ 
+  ⛯ TɪᴍMᴇ : {current_time} 
+  ⟁ DᴀTᴇ : {current_date}   
 ╰───────────────╯</b>"""
 
     CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
 
 ⋟ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
-
 
 ⋟ @KLMovieGroup       
 ⋟ @KL_Group2</b>"""
