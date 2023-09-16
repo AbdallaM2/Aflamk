@@ -15,3 +15,7 @@ async def goodbye(bot, message):
 @Client.on_message(filters.regex("http") & filters.regex("www") | filters.regex("https") | filters.regex("t.me") & filters.incoming)
 async def nolink(bot, message):
 	await message.delete()
+
+@Client.on_message(filters.forwarded & filters.group & filters.private & filters.incoming)
+async def forward(bot, message):
+	await message.delete()
