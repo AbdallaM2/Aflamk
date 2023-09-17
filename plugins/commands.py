@@ -186,8 +186,7 @@ async def start(client, message):
             await asyncio.sleep(1) 
         await sts.delete()
         return
-
-     elif data.split("-", 1)[0] == "DSTORE":
+    elif data.split("-", 1)[0] == "DSTORE":
         sts = await message.reply("Please wait")
         b_string = data.split("-", 1)[1]
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
@@ -292,7 +291,7 @@ async def start(client, message):
             ]
         )
     )
-    
+
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
            
