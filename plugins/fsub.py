@@ -123,6 +123,7 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=enums.ParseMode.MARKDOWN,
             )
+            await asyncio.sleep(100)
             await msg.delete()
         return False
 
@@ -143,29 +144,3 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
 def set_global_invite(url: str):
     global INVITE_LINK
     INVITE_LINK = url
-
-async def send_file(client, query, ident, file_id):
-    files_ = await get_file_details(file_id)
-    if not files_:
-        return
-    files = files_[0]
-    title = files.file_name
-    size = get_size(files.file_size)
-    f_caption = files.caption
-    if CUSTOM_FILE_CAPTION:
-        try:
-            f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
-                                                   file_size='' if size is None else size,
-                                                   file_caption='' if f_caption is None else f_caption)
-        except Exception as e:
-            logger.exception(e)
-            f_caption = f_caption
-    if f_caption is None:
-        f_caption = f"{title}"
-    await client.send_cached_media(
-        chat_id=query.from_user.id,
-        file_id=file_id,
-        caption=f_caption,
-        protect_content=True if ident == 'checksubp' else False
-    )
-   
