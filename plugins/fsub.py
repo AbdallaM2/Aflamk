@@ -132,16 +132,12 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
 
     except Exception as err:
         print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}")
-        sh = await update.reply(
+        msg = await update.reply(
             text="Something went Wrong.",
             parse_mode=enums.ParseMode.MARKDOWN,
             disable_web_page_preview=True
         )
-        check = await check_loop_sub(bot, update)
-            if check:              
-                await sh.delete()
-            else:
-                return False
+        await msg.delete()
         return False
 
 def set_global_invite(url: str):
