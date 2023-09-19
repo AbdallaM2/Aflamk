@@ -43,6 +43,19 @@ class temp(object):
     SETTINGS = {}
     KEYWORD = {}
 
+async def check_loop_sub(client, message):
+    count = 0
+    while True:
+        if count == 15:
+            return False
+        check = await is_subscribed(client, message)
+        count += 1
+        if check:
+            return True
+        else:
+            pass
+        await asyncio.sleep(0.5)
+
 async def is_subscribed(bot, query):
     if not AUTH_CHANNEL and not REQ_CHANNEL:
         return True
