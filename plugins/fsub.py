@@ -117,18 +117,12 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
             buttons.pop()
 
         if not is_cb:
-            sh = await update.reply(
+            await update.reply(
                 text=text,
                 quote=True,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=enums.ParseMode.MARKDOWN,
             )
-            check = await check_loop_sub(bot, update)
-            if check:
-                await update.reply("<b>Tnx For Joining..</b>")
-                await sh.delete()
-            else:
-                return False
         return False
 
     except FloodWait as e:
@@ -138,13 +132,17 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
 
     except Exception as err:
         print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}")
-        await update.reply(
+        sh = await update.reply(
             text="Something went Wrong.",
             parse_mode=enums.ParseMode.MARKDOWN,
             disable_web_page_preview=True
         )
+        check = await check_loop_sub(bot, update)
+            if check:              
+                await sh.delete()
+            else:
+                return False
         return False
-
 
 def set_global_invite(url: str):
     global INVITE_LINK
