@@ -1502,8 +1502,7 @@ async def global_filters(client, message, text=False):
                                     settings = await get_settings(message.chat.id)
                                     if settings['auto_delete']:
                                         await joelkb.delete()
-                            
-                        else:
+                         else:
                             button = eval(btn)
                             joelkb = await client.send_message(
                                 group_id,
@@ -1663,4 +1662,4 @@ async def global_filters(client, message, text=False):
                     logger.exception(e)
                 break
     else:
-        return False
+        return False                                       
