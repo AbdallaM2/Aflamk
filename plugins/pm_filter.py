@@ -14,8 +14,8 @@ from utils import humanbytes
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, FILE_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, NOR_IMG, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, IMDB_TEMPLATE, NO_RESULTS_MSG, SPELL_IMG, MSG_ALRT, FILE_FORWARD, REQ_CHANNEL, MAIN_CHANNEL, LOG_CHANNEL, SPELL_IMG, SUPPORT_CHAT
+from info import ADMINS, AUTH_CHANNEL, FILE_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, NOR_IMG, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, IMDB_TEMPLATE, NO_RESULTS_MSG, SPELL_IMG, MSG_ALRT, FILE_FORWARD, REQ_CHANNEL, MAIN_CHANNEL, LOG_CHANNEL, SPELL_IMG
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -49,7 +49,7 @@ BOT_START_TIME = time.time()
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    if message.chat.id != SUPPORT_CHAT:
+    if message.chat.id != SUPPORT_CHAT_ID:
         manual = await manual_filters(client, message)
         if manual == False:
             settings = await get_settings(message.chat.id)
