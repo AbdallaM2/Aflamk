@@ -49,12 +49,12 @@ BOT_START_TIME = time.time()
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    k = await manual_filters(client, message)        
-    if k == False:
-        await auto_filter(client, message)
-    g = await global_filters(client, message)
-    if g == False:
-        await auto_filter(client, message)
+        glob = await global_filters(client, message)
+        if glob == False:
+            manual = await manual_filters(client, message)
+            if manual == False:
+               await auto_filter(client, message)
+    
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
@@ -1373,6 +1373,7 @@ async def manual_filters(client, message, text=False):
     else:
         return False
 
+                                    
 async def global_filters(client, message, text=False):
     settings = await get_settings(message.chat.id)
     group_id = message.chat.id
@@ -1440,6 +1441,7 @@ async def global_filters(client, message, text=False):
                                     settings = await get_settings(message.chat.id)
                                     if settings['auto_delete']:
                                         await joelkb.delete()
+                            
                         else:
                             button = eval(btn)
                             joelkb = await client.send_message(
@@ -1543,7 +1545,6 @@ async def global_filters(client, message, text=False):
                                 settings = await get_settings(message.chat.id)
                                 if settings['auto_delete']:
                                     await joelkb.delete()
-
                     else:
                         button = eval(btn)
                         joelkb = await message.reply_cached_media(
@@ -1600,4 +1601,4 @@ async def global_filters(client, message, text=False):
                     logger.exception(e)
                 break
     else:
-        return False                                       
+        return False
