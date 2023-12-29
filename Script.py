@@ -1,9 +1,5 @@
 class script(object):
-    START_TXT ="""<b>👋 {} {}, 
-
-ᴛʜɪs ɪs ᴀ ᴘʀᴏ ᴍᴏᴠɪᴇs ᴀᴜᴛᴏꜰɪʟᴛᴇʀ-ʙᴏᴛ ᴡɪᴛʜ 4ɢʙ+ ᴍᴇᴅɪᴀ ꜰɪʟᴇs sᴜᴘᴘᴏʀᴛ.
-
-ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ ᴡɪᴛʜ ᴀᴅᴍɪɴ ᴘᴇʀᴍɪssɪᴏɴ.</b>"""
+    START_TXT = """<b>𝙷𝙴𝙻𝙾 {},\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 {}</b></a> 𝙸 𝙲𝙰𝙽 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾 𝙵𝚒𝚗𝚍 𝙰𝙽𝚈 𝙼𝙾𝚅𝙸𝙴𝚂 𝙹𝚄𝚂𝚃 𝚂𝙴𝙽𝙳 𝙽𝙰𝙼𝙴</b>"""
     
     HELP_TXT = """<b>Hᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ꜰᴏʀ ᴍʏ ᴇxᴛʀᴀ ғᴇᴀᴛᴜʀᴇs.</b>"""
 
@@ -11,19 +7,6 @@ class script(object):
 
 # ⚠️ Please don't change our credits 𝚃𝙷𝙰𝙽𝙺𝚂 𝚃𝙾 & 𝙳𝙴𝚅 👇🏻
 
-    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Oru_adaar_Robot'>Nᴀɴᴄʏ ²·⁰</a>
-✯ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/Hacker_Jr'>HᴀᴄKᴇʀ Jʀ 〆⁪⁬⁮⁮⁮</a>
-✯ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʀᴏɢʀᴀᴍ</a>
-✯ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/'>Pʏᴛʜᴏɴ 3</a>
-✯ Dᴀᴛᴀ Bᴀsᴇ: <a href='https://cloud.mongodb.com/'>Mᴏɴɢᴏ Dʙ</a>
-✯ Bᴏᴛ Sᴇʀᴠᴇʀ: <a href='https://heroku.com/'>Hᴇʀᴏᴋᴜ</a></b>"""
-
-    SOURCE_TXT = """<b>
-⚠️ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ
-
-◆ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href='https://github.com/Joelkb/DQ-The-File-Donor'>ʜᴇʀᴇ</a>
-
-◆ ᴀʟʟ ᴄʀᴇᴅɪᴛs​: <a href='https://t.me/creatorbeatz'>ᴊᴏᴇʟ ᠰ ᴛɢx</a></b>"""
 
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
@@ -86,29 +69,6 @@ noтe
 
 coммand and υѕeѕ
 • /settings - ᴄʜᴀɴɢᴇ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ</b>"""  
-
-    RULE_TXT = """
-<b>♨️ 𝗚𝗥𝗢𝗨𝗣 𝗥𝗨𝗟𝗘𝗦 ♨️
-
-🔹 Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ Wɪᴛʜ Cᴏʀʀᴇᴄᴛ Sᴘᴇʟʟɪɴɢ :
-› ᴀᴠᴀᴛᴀʀ 2009 ✅
-› ᴀᴠᴀᴛᴀʀ ʜɪɴᴅɪ ✅
-› ᴀᴠᴀᴛᴀʀ ᴍᴏᴠɪᴇ ❌
-› ᴀᴠᴀᴛᴀʀ ʜɪɴᴅɪ ᴅᴜʙʙᴇᴅ..❌
-
-🔹Sᴇᴀʀᴄʜ Wᴇʙ Sᴇʀɪᴇs Iɴ ᴛʜɪs Fᴏʀᴍᴀᴛᴇ : 
-› ᴠɪᴋɪɴɢs S01 ✅
-› ᴠɪᴋɪɴɢs S01E01 ✅
-› ᴠɪᴋɪɴɢs S01 ʜɪɴᴅɪ ✅
-› ᴠɪᴋɪɴɢs S01 ʜɪɴᴅɪ ᴅᴜʙʙ. ❌
-› ᴠɪᴋɪɴɢs sᴇᴀsᴏɴ 1 ❌
-› ᴠɪᴋɪɴɢs ᴡᴇʙ sᴇʀɪᴇs ❌
-
-🔹 ᴅᴏɴ'ᴛ ᴅᴏ ᴀɴʏ sᴇʟғ ᴘʀᴏᴍᴏᴛɪᴏɴ.
-🔹 ᴅᴏɴ'ᴛ sᴇɴᴅ ᴀɴʏ ᴋɪɴᴅ ᴏғ ᴘʜᴏᴛᴏ, ᴠɪᴅᴇᴏ ᴅᴏᴄᴜᴍᴇɴᴛs, ᴜʀʟ ᴇᴛᴄ..
-🔹 ᴅᴏɴ'ᴛ ʀᴇǫᴜᴇsᴛ ᴀɴʏ ᴛʜɪɴɢs ᴏᴛʜᴇʀ ᴛʜᴀɴ ᴍᴏᴠɪᴇ sᴇʀɪᴇs ᴀɴɪᴍᴇs..
-
-⚙️ 𝖭ᴏᴛᴇ :- 𝖠ʟʟ ᴍᴇ𝗌𝗌ᴀɢᴇ𝗌 ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟶 ᴍɪɴᴜᴛᴇ𝗌 ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪ𝗌𝗌ᴜᴇ𝗌.</b>"""
 
     CONNECTION_TXT = """Help: <b>Connections</b>
 
@@ -205,7 +165,7 @@ Name - {}
 
 <b>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</b>
 
-<b>© Powered by @Team_KL{}</b>
+<b>© Powered by {}</b>
 """
     SUR_TXT = """
 <b>👋 {} {},
@@ -215,22 +175,18 @@ Name - {}
 ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ɢɪᴠᴇ ᴍᴏᴠɪᴇs ᴏʀ sᴇʀɪᴇs ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴘᴍ !!</b>"""
 
     IMDB_TEMPLATE_TXT = """
-<b>⍞ TɪᴛLᴇ : {title}
-⌬ YᴇAʀ : {year}
-✇ LᴀNɢUᴀGᴇ : {languages}
-⛦ RᴀTɪNɢ : {rating} / 10.0
-〄 QᴜAʟIᴛY : HDRip
-╭───────────────╮
-  ⛯ TɪᴍMᴇ : {current_time} 
-  ⟁ DᴀTᴇ : {current_date}   
-╰───────────────╯</b>"""
+<b>🎬 اسـم الـفيلـم : <a href={url}>{title}</a>
+📆 الـسـنـة : {year}
+🎭 التصنيـف : {genres}
+⭐ الـتـقـيــم : <a href={url}/ratings>{rating} IMDB</a>
+⏰ الوقت : {runtime} دقيقة
+🎙️ الـلـغـة : {languages}
 
-    CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
+<a href=https://t.me/AflamyGroup><b>Mᴏᴠɪᴇs & Sᴇʀɪᴇs Gʀᴏᴜᴘ 🎬</b></a>
+"""
 
-⋟ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
-
-⋟ @KLMovieGroup       
-⋟ @KL_Group2</b>"""
+    CUSTOM_FILE_CAPTION = """<a href=t.me/AflamSocietyy><b>{file_name}</b></a>\n\n⚙️ <b>الـحـجـم {file_size}\n\n➲ [𝐆𝐫𝐨𝐮𝐩](https://t.me/AflamyGroup)\n➲ [𝐂𝐡𝐚𝐧𝐧𝐞𝐥](https://t.me/AflamSocietyy)</b>
+"""
 
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
